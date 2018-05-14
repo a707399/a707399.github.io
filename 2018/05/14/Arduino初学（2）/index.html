@@ -7,26 +7,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>bomb-二进制炸弹解密（3） | RyzeN&#39;s blog</title>
+  <title>Arduino初学（2） | RyzeN&#39;s blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="汇编," />
+    <meta name="keywords" content="Arduino," />
   
 
-  <meta name="description" content="对本系列感兴趣的小伙伴们可以翻看往期博文  这一篇文章我们来讲一讲第三个“炸弹”的拆解照例，我们来看一下phase3函数     08048b86 &amp;lt;phase_3&amp;gt;:     8048b86:    55                       push   %ebp     8048b87:    89 e5                    mov    %esp,%e">
-<meta name="keywords" content="汇编">
+  <meta name="description" content="这一次我们来学习单个数码管的使用数码管的原理图如上所示。数码管本质是8个LED的并联，各LED阳极或阴极共用一个管脚，分为共阳/共阴二极管（外观相同，需要用万用表测量来区别）。用时想点亮哪个二极管，就在引脚和公共脚加电压即可。本次我们将试着点亮二极管并让其按顺序显示1-F.接线图如下可以看出接线还是十分简单的（就是引脚有点多orz）接好后我们与电脑连接，运行程序即可。程序代码如下 #define">
+<meta name="keywords" content="Arduino">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bomb-二进制炸弹解密（3）">
-<meta property="og:url" content="http://yoursite.com/2018/05/14/bomb-二进制炸弹解密（3）/index.html">
+<meta property="og:title" content="Arduino初学（2）">
+<meta property="og:url" content="http://yoursite.com/2018/05/14/Arduino初学（2）/index.html">
 <meta property="og:site_name" content="RyzeN&#39;s blog">
-<meta property="og:description" content="对本系列感兴趣的小伙伴们可以翻看往期博文  这一篇文章我们来讲一讲第三个“炸弹”的拆解照例，我们来看一下phase3函数     08048b86 &amp;lt;phase_3&amp;gt;:     8048b86:    55                       push   %ebp     8048b87:    89 e5                    mov    %esp,%e">
+<meta property="og:description" content="这一次我们来学习单个数码管的使用数码管的原理图如上所示。数码管本质是8个LED的并联，各LED阳极或阴极共用一个管脚，分为共阳/共阴二极管（外观相同，需要用万用表测量来区别）。用时想点亮哪个二极管，就在引脚和公共脚加电压即可。本次我们将试着点亮二极管并让其按顺序显示1-F.接线图如下可以看出接线还是十分简单的（就是引脚有点多orz）接好后我们与电脑连接，运行程序即可。程序代码如下 #define">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-14T04:56:48.094Z">
+<meta property="og:image" content="http://yoursite.com/2018/05/14/Arduino初学（2）/Arduino-2-2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/05/14/Arduino初学（2）/Arduion初学（2）/Arduino-2-3.jpg">
+<meta property="og:updated_time" content="2018-05-14T15:30:22.609Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bomb-二进制炸弹解密（3）">
-<meta name="twitter:description" content="对本系列感兴趣的小伙伴们可以翻看往期博文  这一篇文章我们来讲一讲第三个“炸弹”的拆解照例，我们来看一下phase3函数     08048b86 &amp;lt;phase_3&amp;gt;:     8048b86:    55                       push   %ebp     8048b87:    89 e5                    mov    %esp,%e">
+<meta name="twitter:title" content="Arduino初学（2）">
+<meta name="twitter:description" content="这一次我们来学习单个数码管的使用数码管的原理图如上所示。数码管本质是8个LED的并联，各LED阳极或阴极共用一个管脚，分为共阳/共阴二极管（外观相同，需要用万用表测量来区别）。用时想点亮哪个二极管，就在引脚和公共脚加电压即可。本次我们将试着点亮二极管并让其按顺序显示1-F.接线图如下可以看出接线还是十分简单的（就是引脚有点多orz）接好后我们与电脑连接，运行程序即可。程序代码如下 #define">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/14/Arduino初学（2）/Arduino-2-2.jpg">
 
   
 
@@ -175,9 +178,9 @@
 
 
 <div class="content content-post CENTER">
-   <article id="post-bomb-二进制炸弹解密（3）" class="article article-type-post" itemprop="blogPost">
+   <article id="post-Arduino初学（2）" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">bomb-二进制炸弹解密（3）</h1>
+    <h1 class="post-title">Arduino初学（2）</h1>
 
     <div class="article-meta">
       <span>
@@ -195,7 +198,7 @@
       
   <span class="article-category">
     <i class="icon-list"></i>
-    <a class="article-category-link" href="/categories/汇编/">汇编</a>
+    <a class="article-category-link" href="/categories/Arduino/">Arduino</a>
   </span>
 
 
@@ -203,7 +206,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://www.forsigner.com/2018/05/14/bomb-二进制炸弹解密（3）/#disqus_thread"></a>
+          <a href="http://www.forsigner.com/2018/05/14/Arduino初学（2）/#disqus_thread"></a>
         </span>
       
 
@@ -220,10 +223,70 @@
 
   <div class="article-content">
     
-      <blockquote>
-<p>对本系列感兴趣的小伙伴们可以翻看往期博文</p>
-</blockquote>
-<p>这一篇文章我们来讲一讲第三个“炸弹”的拆解<br><br><br>照例，我们来看一下phase3函数<br>     08048b86 &lt;phase_3&gt;:<br>     8048b86:    55                       push   %ebp<br>     8048b87:    89 e5                    mov    %esp,%ebp<br>     8048b89:    83 ec 18                 sub    $0x18,%esp<br>     8048b8c:    8d 45 f8                 lea    -0x8(%ebp),%eax<br>     8048b8f:    50                       push   %eax<br>     8048b90:    8d 45 fc                 lea    -0x4(%ebp),%eax<br>     8048b93:    50                       push   %eax<br>     8048b94:    68 68 99 04 08           push   $0x8049968<br>     8048b99:    ff 75 08                 pushl  0x8(%ebp)<br>     8048b9c:    e8 d7 fc ff ff           call   8048878 &lt;sscanf@plt&gt;<br>     8048ba1:    83 c4 10                 add    $0x10,%esp<br>     8048ba4:    83 f8 01                 cmp    $0x1,%eax<br>     8048ba7:    7f 05                    jg     8048bae &lt;phase_3+0x28&gt;<br>     8048ba9:    e8 3e 08 00 00           call   80493ec &lt;explode_bomb&gt;<br>     8048bae:    83 7d fc 07              cmpl   $0x7,-0x4(%ebp)<br>     8048bb2:    77 65                    ja     8048c19 &lt;phase_3+0x93&gt;<br>     8048bb4:    8b 45 fc                 mov    -0x4(%ebp),%eax<br>     8048bb7:    ff 24 85 cc 96 04 08     jmp    *0x80496cc(,%eax,4)<br>     8048bbe:    b8 00 00 00 00           mov    $0x0,%eax<br>     8048bc3:    eb 4d                    jmp    8048c12 &lt;phase_3+0x8c&gt;<br>     8048bc5:    b8 00 00 00 00           mov    $0x0,%eax<br>     8048bca:    eb 41                    jmp    8048c0d &lt;phase_3+0x87&gt;<br>     8048bcc:    b8 00 00 00 00           mov    $0x0,%eax<br>     8048bd1:    eb 35                    jmp    8048c08 &lt;phase_3+0x82&gt;<br>     8048bd3:    b8 00 00 00 00           mov    $0x0,%eax<br>     8048bd8:    eb 29                    jmp    8048c03 &lt;phase_3+0x7d&gt;<br>     8048bda:    b8 00 00 00 00           mov    $0x0,%eax<br>     8048bdf:    eb 1d                    jmp    8048bfe &lt;phase_3+0x78&gt;<br>     8048be1:    b8 00 00 00 00           mov    $0x0,%eax<br>     8048be6:    eb 11                    jmp    8048bf9 &lt;phase_3+0x73&gt;<br>     8048be8:    b8 59 03 00 00           mov    $0x359,%eax<br>     8048bed:    eb 05                    jmp    8048bf4 &lt;phase_3+0x6e&gt;<br>     8048bef:    b8 00 00 00 00           mov    $0x0,%eax<br>     8048bf4:    2d df 01 00 00           sub    $0x1df,%eax<br>     8048bf9:    05 bd 02 00 00           add    $0x2bd,%eax<br>     8048bfe:    2d db 02 00 00           sub    $0x2db,%eax<br>     8048c03:    05 f2 00 00 00           add    $0xf2,%eax<br>     8048c08:    2d 86 00 00 00           sub    $0x86,%eax<br>     8048c0d:    05 86 00 00 00           add    $0x86,%eax<br>     8048c12:    2d 9b 01 00 00           sub    $0x19b,%eax<br>     8048c17:    eb 0a                    jmp    8048c23 &lt;phase_3+0x9d&gt;<br>     8048c19:    e8 ce 07 00 00           call   80493ec &lt;explode_bomb&gt;<br>     8048c1e:    b8 00 00 00 00           mov    $0x0,%eax<br>     8048c23:    83 7d fc 05              cmpl   $0x5,-0x4(%ebp)<br>     8048c27:    7f 05                    jg     8048c2e &lt;phase_3+0xa8&gt;<br>     8048c29:    3b 45 f8                 cmp    -0x8(%ebp),%eax<br>     8048c2c:    74 05                    je     8048c33 &lt;phase_3+0xad&gt;<br>     8048c2e:    e8 b9 07 00 00           call   80493ec &lt;explode_bomb&gt;<br>     8048c33:    c9                       leave<br>     8048c34:    c3                       ret    </p>
+      <p>这一次我们来学习单个数码管的使用<br><br><br><img src="/2018/05/14/Arduino初学（2）/Arduino-2-2.jpg" alt=""><br><br><br>数码管的原理图如上所示。数码管本质是8个LED的并联，各LED阳极或阴极共用一个管脚，分为共阳/共阴二极管（外观相同，需要用万用表测量来区别）。用时想点亮哪个二极管，就在引脚和公共脚加电压即可。<br><br><br>本次我们将试着点亮二极管并让其按顺序显示1-F.接线图如下<br><img src="/2018/05/14/Arduino初学（2）/Arduion初学（2）/Arduino-2-3.jpg" alt=""><br><br><br>可以看出接线还是十分简单的（就是引脚有点多orz）<br><br><br>接好后我们与电脑连接，运行程序即可。<br><br><br>程序代码如下</p>
+<pre><code>#define D_a 2  //数码管a 接引脚 2
+#define D_b 3
+#define D_c 4
+#define D_d 5
+#define D_e 6
+#define D_f 7
+#define D_g 8
+#define D_h 9
+
+//数码管0-F数字码值
+unsigned char num[17][8] =
+{
+ //1为点亮，0为关闭，a表示数码管a的led灯，其他类似
+ //a  b  c  d  e  f  g  h 
+  {1, 1, 1, 1, 1, 1, 0, 0},      //0
+  {0, 1, 1, 0, 0, 0, 0, 0},     //1
+  {1, 1, 0, 1, 1, 0, 1, 0},     //2
+  {1, 1, 1, 1, 0, 0, 1, 0},     //3
+  {0, 1, 1, 0, 0, 1, 1, 0},     //4
+  {1, 0, 1, 1, 0, 1, 1, 0},     //5
+  {1, 0, 1, 1, 1, 1, 1, 0},     //6
+  {1, 1, 1, 0, 0, 0, 0, 0},     //7
+  {1, 1, 1, 1, 1, 1, 1, 0},     //8
+  {1, 1, 1, 1, 0, 1, 1, 0},     //9
+  {1, 1, 1, 0, 1, 1, 1, 1},     //A
+  {1, 1, 1, 1, 1, 1, 1, 1},     //B
+  {1, 0, 0, 1, 1, 1, 0, 1},     //C
+  {1, 1, 1, 1, 1, 1, 0, 1},     //D
+  {1, 0, 0, 1, 1, 1, 1, 1},     //E
+  {1, 0, 0, 0, 1, 1, 1, 1},     //F
+  {0, 0, 0, 0, 0, 0, 0, 1},     //.
+};
+
+void setup()
+{
+  pinMode(D_a,OUTPUT);        //设置引脚为输出
+  pinMode(D_b,OUTPUT);        //设置引脚为输出
+  pinMode(D_c,OUTPUT);        //设置引脚为输出
+  pinMode(D_d,OUTPUT);        //设置引脚为输出
+  pinMode(D_e,OUTPUT);        //设置引脚为输出
+  pinMode(D_f,OUTPUT);        //设置引脚为输出
+  pinMode(D_g,OUTPUT);        //设置引脚为输出
+  pinMode(D_h,OUTPUT);        //设置引脚为输出
+}
+
+void loop()
+{
+  //按顺序显示0123456789ABCDEF.
+  for( int i = 0 ; i &lt; 17 ; i++)        //循环显示0-9 
+  {
+    digitalWrite(D_a,num[i][0]);  //设置a 引脚的电平
+    digitalWrite(D_b,num[i][1]);  //设置b 引脚的电平
+    digitalWrite(D_c,num[i][2]);  //设置c 引脚的电平
+    digitalWrite(D_d,num[i][3]);  //设置d 引脚的电平
+    digitalWrite(D_e,num[i][4]);  //设置e 引脚的电平
+    digitalWrite(D_f,num[i][5]);  //设置f 引脚的电平
+    digitalWrite(D_g,num[i][6]);  //设置g 引脚的电平
+    digitalWrite(D_h,num[i][7]);  //设置h 引脚的电平
+
+    delay(1000);            //延迟1秒
+  }
+}
+</code></pre><p>可以看出程序没有什么难处，通过预先设置在不同数字及字母各LED对应的开闭状态，来循环输出<br><br><br>那么本篇博文就到这里（这很明显是偷懒啊orz你明明是phase3卡住了吧……)</p>
 
     
   </div>
@@ -239,10 +302,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2018/05/13/bomb-二进制炸弹解密（2）/">
+    <a class="show pull-left" href="/2018/05/14/bomb-二进制炸弹解密（3）/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2018/05/14/Arduino初学（2）/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -356,7 +419,7 @@
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'http://yoursite.com/2018/05/14/bomb-二进制炸弹解密（3）/';
+    var disqus_url = 'http://yoursite.com/2018/05/14/Arduino初学（2）/';
     
     (function(){
       var dsq = document.createElement('script');
