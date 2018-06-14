@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>信息论在老鼠毒药问题中的应用 | RyzeN&#39;s blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="others," />
+  
+
+  <meta name="description" content="信息论在老鼠毒药问题中的应用   有100只一模一样的瓶子，编号1-100。其中99瓶是水，一瓶是看起来像水的毒药。只要老鼠喝下一小口毒药，一天后则死亡。现在，你有7只老鼠和一天的时间，如何检验出哪个号码瓶子里是毒药？  &amp;amp;nbsp 上面的问题我们称作“问题1”，通过思考这道题的解题方法可以提高我们对二进制的理解能力。   ####相信大家早已了解如何解答这个问题，在此给出最常见的答案：">
+<meta name="keywords" content="others">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息论在老鼠毒药问题中的应用">
+<meta property="og:url" content="http://yoursite.com/2018/06/14/信息论在老老鼠毒药问题中的应用/index.html">
+<meta property="og:site_name" content="RyzeN&#39;s blog">
+<meta property="og:description" content="信息论在老鼠毒药问题中的应用   有100只一模一样的瓶子，编号1-100。其中99瓶是水，一瓶是看起来像水的毒药。只要老鼠喝下一小口毒药，一天后则死亡。现在，你有7只老鼠和一天的时间，如何检验出哪个号码瓶子里是毒药？  &amp;amp;nbsp 上面的问题我们称作“问题1”，通过思考这道题的解题方法可以提高我们对二进制的理解能力。   ####相信大家早已了解如何解答这个问题，在此给出最常见的答案：">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-14T04:06:51.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="信息论在老鼠毒药问题中的应用">
+<meta name="twitter:description" content="信息论在老鼠毒药问题中的应用   有100只一模一样的瓶子，编号1-100。其中99瓶是水，一瓶是看起来像水的毒药。只要老鼠喝下一小口毒药，一天后则死亡。现在，你有7只老鼠和一天的时间，如何检验出哪个号码瓶子里是毒药？  &amp;amp;nbsp 上面的问题我们称作“问题1”，通过思考这道题的解题方法可以提高我们对二进制的理解能力。   ####相信大家早已了解如何解答这个问题，在此给出最常见的答案：">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-信息论在老老鼠毒药问题中的应用" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">信息论在老鼠毒药问题中的应用</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.06.14</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>RyzeN</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/others/">others</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/2018/06/14/信息论在老老鼠毒药问题中的应用/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <center><strong>信息论在老鼠毒药问题中的应用</strong></center>
+
+<blockquote>
+<p><em>有100只一模一样的瓶子，编号1-100。其中99瓶是水，一瓶是看起来像水的毒药。只要老鼠喝下一小口毒药，一天后则死亡。现在，你有7只老鼠和一天的时间，如何检验出哪个号码瓶子里是毒药？</em></p>
+</blockquote>
+<p>&amp;nbsp 上面的问题我们称作“问题1”，通过思考这道题的解题方法可以提高我们对二进制的理解能力。</p>
+
+<hr>
+<p>####相信大家早已了解如何解答这个问题，在此给出最常见的答案：</p>
+<blockquote>
+<p>######首先，将瓶子的10进制编号数改成7位的2进制码。然后，让第1只老鼠喝所有2进制码第1位是1的瓶子中的水；让第2只老鼠喝所有2进制码第2位是1的瓶子中的水；以此类推下去。这样，每个老鼠第二天的死活情况就决定了毒水瓶子二进制码这一位的数字：老鼠死，对应1，反之为0。换言之，将7只老鼠死活情况排成一排。比如说结果是“死活死死活活死”的话，毒水瓶子的二进制标签就是：1011001，转换成10进制，得到89。</p>
+</blockquote>
+<p>###</p>
+<hr>
+<p>#####这道题可以有很多种在各个参数方向的扩张和一般化。最“通-通-通-通”的解够你研究好一阵子。比如，如果我们把题目稍加变化（问题2）：###</p>
+<blockquote>
+<p>有100只一模一样的瓶子，编号1-100。其中99瓶是水，一瓶是看起来像水的毒药。只要老鼠喝下一小口毒药，一天后则死亡。现在，给你2天的时间，请你告诉我，你至少需要多少只老鼠，才能检验出哪个号码瓶子里是毒药？</p>
+</blockquote>
+<p>比较原来的题目，这个题目有两个变化：一是给你的时间多了一天。因为老鼠喝毒药1天之后死去，2天意味着你可以做两次实验，这给了你一个时间方向（实验次数）的空间，有可能让你用更少数目的老鼠，达到同样的目的。</p>
+<p>第二个改变是提问的方式。这次的问题是：你‘至少’需要多少只老鼠？回答这类问题，是只要估计一个下限，对你来说，做实验的小白鼠多多益善，但你的老板要花钱买它们，他得考虑经济效益。当你还没有完全把方案想清楚之前，你好歹给老板一个交代呀。这种时候，<strong>信息论</strong>能派得上一点用场。</p>
+<hr>
+<p>刚才我说‘信息论’，实际上，我们完全用不上什么信息论的任何高深理论，用的只不过是由香农定义的计算信息量的一个公式而已。牛刀杀鸡虽然太大，但用它锋利的小尖给开个小口也未尝不可。</p>
+<blockquote>
+<p>科学（不仅限于数学）上的大多数研究，说穿了就是一个处理‘信息’的过程。摈弃无用的信息，想办法得到有用而正确的信息，用以消除原来课题中的不确定性，得到更为确定的科学规律。</p>
+</blockquote>
+<p>#######那么，我们首先要明白，什么是信息？</p>
+<blockquote>
+<p>这是一个古老的问题，又是一个现代的问题，也是一个迄今为止仍然众说纷纭、悬而未决的问题，特别是在社会所认可的广义信息的层面上。</p>
+</blockquote>
+<blockquote>
+<p>你要是问：“什么是信息？”，人人都能列出一大串他称之为‘信息’的东西：新闻、消息、音乐、图片……。然而如果问：“信息是什么？”那就难以回答了。因为你可以说：“音乐是信息”，但你不能说：“信息是音乐”；你可以说：“照片是信息”，但你不能说：“信息是照片”。要给信息下个定义是不容易的。‘信息’的定义需要从许多具体信息表现形式中抽象出它们的共性来。</p>
+</blockquote>
+<blockquote>
+<p>中国古人理解的信息其实很简单，正如李清照的名句中所述：“不乞隋珠与和璧，只乞乡关新信息。”，看来这只是通俗意义上的‘音讯’或‘消息’而已。</p>
+</blockquote>
+<blockquote>
+<p>现代人比较考究，注重科学。因此而成天琢磨：信息到底是什么？信息是主观的还是客观的？是相对的还是绝对的？</p>
+</blockquote>
+<blockquote>
+<p>昨天北京发大水，你将这个消息，用电话告知你南京的两个朋友，可是，A说他早知此事，B原来不知晓，因此，这条消息对A来说，没有增加任何信息，对B来说就增加了信息。B抱着的小狗好像也听见了电话中的声音，但它不懂人的语言，这对它来说也不是信息。</p>
+</blockquote>
+<p>######信息是模糊的还是精确的？</p>
+<blockquote>
+<p>你走到树林里，艳阳高照、和风习习、桃红李白、燕飞鸟鸣，大自然传递给我们许多信息，这些算是没有精确度量过的、模糊的信息。</p>
+</blockquote>
+<blockquote>
+<p>信息和‘知识’是一码事吗？也应该不是。众所周知，我们的信息化社会虽然充满了信息，但其中“鱼龙混杂，良莠不齐”，以至于大家都希望自己的孩子不要整天沉迷于网上，许多人抱怨：“信息虽发达，知识却贫乏”。所以，信息并不等同于知识！</p>
+</blockquote>
+<blockquote>
+<p>文学家、哲学家、社会学家……，各家各派都对‘信息’有不同的理解和说法。这其中，物理学家们，是如何理解和定义信息的呢？</p>
+</blockquote>
+<blockquote>
+<p>物理学家们的研究对象是物质和物质的运动，即物质和能量。在他们看来，信息是什么呢？是否能归类进这两个他们所熟悉的概念呢？</p>
+</blockquote>
+<blockquote>
+<p>信息显然不是物质，它应该是物质的一种属性，听起来和能量有些类似，但它显然也不是能量。物理学中的能量早就有其精确的、可度量的定义，它衡量的是物体（物质）做功的本领。信息与这种‘功’似乎无直接关联。当然，我们又知道，信息是很有用的，个人和社会都可以利用信息来产生价值，这不又有点类似于‘做功’了吗？对此，物理学家仍然摇头：不一样啊，你说的好像是精神上的价值。</p>
+</blockquote>
+<blockquote>
+<p>信息属于精神范畴吗？那也不对啊，从科学家们的眼中看来，信息，仍然应该是一种独立于人类的主观精神世界、客观存在的东西。因此，到了最后，有人便宣称说：</p>
+</blockquote>
+<blockquote>
+<p>“组成我们的客观世界，有三大基本要素：除了物质和能量之外，还有信息。”</p>
+</blockquote>
+<hr>
+<p>美国学者、哈佛大学的欧廷格（A．G．Oettinger）对这三大基本要素作了精辟的诠释：</p>
+<p>“没有物质什么都不存在，没有能量什么都不会发生，没有信息什么都没有意义。” </p>
+<p>尽管对“信息是什么？”的问题难有定论，但通过与物理学中定义的物质和能量相类比，科学家们恍然大悟：信息的概念如此混乱，可能是因为我们没有给它一个定量的描述。科学理论需要物理量的量化，量化后才能建立数学模型。如果我们能将‘信息’量化，问题可能就会好办多了！</p>
+<p>于是，在二十世纪40年代后期，一个年轻的科学家，后来被人誉为信息和数字通讯之父的香农，登上了科学技术的历史舞台。</p>
+<p>香农的两大贡献：一是信息理论、信息熵的概念；另一是符号逻辑和开关理论。香农的信息论为明确什么是信息量概念作出了决定性的贡献。感谢香农，在定量研究的科学领域中，他将原来模模糊糊的信息概念，天才地给以了量化，使我们大家在解数学问题时也能‘牛刀小试’。</p>
+<p>其实香农并不是给信息量化的第一人，巨人也得站在前人的肩膀上。1928年，哈特利（R.V. H. Harley）就曾建议用N log D这个量表示信息量。1949年，控制论创始人维纳将度量信息的概念引向热力学。1948年，香农认为，信息是对事物运动状态或存在方式的不确定性的描述。并把哈特利的公式扩大到概率ai不同的情况，得到信息量的公式：</p>
+<p><center>　<strong>H=∑-ai log ai</strong><br></center><br>如果计算中的对数log是以2为底的，那么计算出来的信息就以比特（bit）为单位。</p>
+<hr>
+<p>根据香农的信息概念，信息能消除不确定性，而我们在解决数学题的时候，也是要消除不确定性，得到确定的答案。并不仅仅是老鼠问题和称球问题如此，我认为大多数问题都多少是一个‘消除不确定性’的过程。因此，我们为何不借用香农的工具，研究研究我们的问题有多少不确定性呢？也就是说，需要多少信息量才能解决这个问题？另外，根据题目所限制的手段，最多能够得到多少信息量？有无可能完全解决这个问题？等等。</p>
+<p>具体到老鼠和毒药的问题。100瓶液体中1瓶有毒，每1瓶发生有毒的概率是1/100，这时候要确定毒药瓶所需的信息量H = -(p1logp1+p2logp2+….+p100logp100)。</p>
+<p>因为所有瓶子完全相同，这是一个等概率问题，p1 = p2 =…=p100 = 1/100。</p>
+<p>得到H=-log（1/100）。</p>
+<p>下面计算从老鼠能得到的信息量。</p>
+<p>首先考虑问题1，即给定时间为1天的情况。一天后，每只老鼠或死或活，因此，能够提供1比特的信息。7只老鼠则能提供7比特的信息。</p>
+<p>再看看刚才列出的确定毒药瓶所需的信息量H的公式：H=-log（1/100）&lt;  -log（1/128）= 7比特。</p>
+<p>因此，问题1应该可以解决。这个可能性是信息论提供给我们的。实际上，应该不仅仅是可能性，这种计算信息量比特数的方法能启发我们的思维。在解题时，学习别人解题的方法固然重要，而探讨别人是如何想到这种方法的，可能更为重要。在《大将军数学题2》的讨论中，就有博友说，如果提到2进制，此题就容易了。的确如此，如果不想到2进制，对此题往往好像有点束手无策，不知如何下手。</p>
+<hr>
+<p>我们再来讨论问题2。</p>
+<p>所需要的信息量H的计算是和问题1一样的。然而，从每只老鼠能得到的信息量的计算，却可能会有所不同。这儿我用了‘可能’两个字，是因为我们还丝毫未曾谈及如何解决这个问题2。</p>
+<p>问题2和问题1的差别是在于老鼠可以参加接连两次实验。问题1中，只能做一次实验时，老鼠有两种状态：死或活。因此它可利用的信息量是1比特。如果能做两次实验，两次实验中都有生死的可能性，仅就逻辑而言，老鼠有四种可能情况：生生、生死、死生、死死。但其中的第三种情形：死生，是不可能发生的，因为在第一天的实验中死了的老鼠，不可能在第二次实验后又活过来。所以我们要将第一天实验中死了的老鼠，排除在第二次实验之外。所以，对问题2，老鼠有3种状态，每种状态的概率为1/3，因此，从一只老鼠得到的信息量</p>
+<p>S=-（1/3log（1/3）+ 1/3log（1/3）+ 1/3log（1/3））= log（3）。</p>
+<p>如果将这儿的对数取以3为底的话，可以说成，每只老鼠能得到的信息量是一个3进制位（trit）。</p>
+<p>多少只老鼠才能使总信息量大于log（100）呢？</p>
+<p>解方程：k*log(3)&gt;log(100)  =&gt;  3**k&gt;100，可得到k&gt;=5。</p>
+<p>因此，至少要5只老鼠，这便是问题2的解。</p>
+<hr>
+<p>但是无论如何，5只老鼠到底能否判定出有毒的瓶子，还需我们想出具体检验的方案才成定论。</p>
+<p>因此，我们继续思考问题3（问题2的延伸）：在能做两次实验的条件下，如何找出有毒的瓶子？</p>
+<p>沿着刚才信息量计算的思路，问题1最优答案用2进制有关的实验方法得到；问题2中估计老鼠数目的下界时，用到了3进制。那么，在能做两次实验的条件下，找出有毒的瓶子的最佳方案是否与3进制有关？</p>
+<p>试试看吧。首先，将瓶子的号码转换成5位的3进制。为什么是5？5只老鼠？对，由于同样的原因，最大的号码100需要用‘5位的3进制’来表示。这100个5位3进制码列表如下：</p>
+<p>00000，<br>00001，<br>00002，<br>00010，<br>00011，<br>00012，<br>00020，<br>00021，<br>00022，<br>…………<br>10201</p>
+<p>然后，第一次实验：<br>从左到右：让第1只老鼠喝所有3进制码第1位是2的瓶子中的水；让第2只老鼠喝所有3进制码第2位是2的瓶子中的水；以此类推下去。这样，每个老鼠第二天的死活情况就决定了毒水瓶子3进制码这一位的数字是不是2：老鼠死，2；老鼠活，1或0。</p>
+<p>第一次实验中死去的老鼠没有白死，它的死决定了毒水瓶3进制码的这位数字是2！虽然这个老鼠为2而牺牲了，但很幸运，这一位的数字也被决定了，我们也不再需要这只老鼠。嘿嘿，我们让这个老鼠作出了它的最大贡献，要不然，就不是最优化的方案了。</p>
+<p>第一次实验中没死的老鼠也没有白白地冒险，也为我们提供了信息：毒水瓶子3进制码的这一位的数字肯定不是2！所以，我们可以将3进制码这位是2的瓶子去除，因为它们肯定无毒。然后……</p>
+<p>第二次实验：<br>让没死的老鼠喝下所有3进制码的该位数字为1的瓶子中的水。这个老鼠一天后的死活情况便决定了毒水瓶子3进制码这一位的数字是1还是0：老鼠死，1；老鼠活，0。</p>
+<hr>
+<p>这个问题可以此类推地扩展成更一般的问题：假设有n个瓶子，其中1个瓶子中的水有毒，实验的小白鼠喝了毒水1天后死去，给你i天的时间，k只老鼠。问n的最大值是多少？如何实验，才能检测出毒水瓶来。</p>
+<p>答案：有i天的时间，你可以做i次试验，因为死了的老鼠不能继续试验，i次试验后，老鼠总共的可能状态有（i+1）个：</p>
+<p>第1次就死去、第2次死、第3次死、……、第i次死、一直活着。</p>
+<p>能检测的最多水瓶数n=(i+1)**k。检测方法：将所有瓶子用k位的(i+1)进制数编码，然后，遵循上面所述i=2类似的过程，i天之后，根据k个老鼠的状态，可以确定毒水瓶的(i+1)进制数值。</p>
+<p><br><br>通过用信息论解老鼠喝毒药的这个简单练脑题，说明科学思维方法之重要性。</p>
+
+    
+  </div>
+
+  
+      <div class="git"></div>
+  
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/05/14/Arduino初学（2）/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2018/06/14/信息论在老老鼠毒药问题中的应用/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
